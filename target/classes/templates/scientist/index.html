@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        <div layout:fragment="sidebar">
+            <div class="list-group">
+                <a class="list-group-item" href="create.html" data-th-href="@{/create}">New Item</a>
+                <a class="list-group-item" href="deleteall.html" data-th-href="@{/deleteAll}">Delete All</a>
+            </div>
+        </div>
+        <div layout:fragment="body">
+            <h1>Scientist around the world</h1>
+            <div class="alert alert-warning" data-th-if="${#lists.isEmpty(scientists)}" role="alert"><p data-th-text="${deleteMsg}">No scientists available</p></div>
+            <div th:unless="${#lists.isEmpty(scientists)}">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Country</th>
+                            <th>Website</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-th-each="scientist : ${scientists}">
+                            <td data-th-text="${scientist.name}"/>
+                            <td data-th-text="${scientist.country}"/>
+                            <td data-th-text="${scientist.website}"/>
+                            <td><a href="#" data-th-href="@{/edit/{scientistId}(scientistId=${scientist.id})}" data-th-text="E">E</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>        
+    </body>
+</html>

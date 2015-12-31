@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">layout</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2" layout:fragment="sidebar">
+                    http://frameworkonly.com/spring-boot-crud-tutorial-thymeleaf-spring-data-jpa-hikaricp/
+                </div>
+                <div class="col-md-10" layout:fragment="body">
+                    
+                </div>
+            </div>
+        </div>
+        <script src="/webjars/jquery/1.11.1/jquery.min.css"></script>
+        <script src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </body>
+</html>

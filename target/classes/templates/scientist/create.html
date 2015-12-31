@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+    <head>
+        <title>New</title>
+    </head>
+    <body>
+        <div layout:fragment="sidebar">
+            <div class="list-group">
+                <a class="list-group-item" href="create.html" data-th-href="@{/create}">New Item</a>
+                <a class="list-group-item" href="deleteall.html" data-th-href="@{/deleteAll}">Delete All</a>
+            </div>
+        </div>
+        <div layout:fragment="body">
+            <h1> Add a new scientist</h1>
+            <form class="form form-horizontal" action="#" data-th-action="@{/add}" method="post">
+                
+                <label for="scientistName" class="control-label">Name</label>
+                <input type="text" name="name" id="scientistName" class="form-control" />
+                <label for="scientistWebsite" class="control-label">Website</label>
+                <input type="text" name="website" id="scientistWebsite" class="form-control" />
+                <label for="scientistCountry" class="control-label">Country</label>
+                <input type="text" name="country" id="scientistCountry" class="form-control" />
+                <input type="submit" class="btn btn-primary" /><input type="reset" class="btn btn-default"/>
+                
+            </form>
+        </div>        
+    </body>
+</html>
